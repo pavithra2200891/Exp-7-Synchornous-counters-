@@ -47,14 +47,45 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 4-bit Count Down Counter
 ### Procedure
 /* write all the steps invloved */
-
+1. Create a new project in Quartus2 software .
+2. Name the project as uc for upcounter and dc for down counter.
+3. Create a new verilog hdl file in the project file.
+4. Name the module declare as dc and uc for down counter and upcounter.
+5. Within the module declare input and output variables.
+6. Create a loop using if-else with condition parameter as reset.
+7. End the loop.
+8. End the module.
 
 
 ### PROGRAM 
 /*
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
+UP COUNTER
+module UPCOUNTER(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_up;
+always@(posedge clk or posedge reset)
+begin
+if(reset)
+counter_up<=4'd0;
+else counter_up<=counter_up+4'd1;
+end
+assign counter=counter_up;
+end module
+
+DOWN COUNTERmodule DOWNCOUNTER(input clk,input reset,output[0:3]counter);
+reg[0:3] counter_down;
+always@(posedge clk or posedge reset)
+begin
+if(reset)
+counter_down<=4'd0;
+else
+counter_down<=counter_down-4'd1;
+end
+assign counter=counter_down;
+endmodule
+
+Developed by: Y PAVITHRA
+RegisterNumber: 212222050043 
 */
 
 
@@ -63,7 +94,10 @@ RegisterNumber:
 
 
 ### RTL LOGIC UP COUNTER AND DOWN COUNTER  
+UPCOUNTER
+![RTL UC](https://github.com/pavithra2200891/Exp-7-Synchornous-counters-/assets/128951583/3c5ab512-8ef8-4583-ae62-8761a60e300b)
 
+DOWN COUNTER![RTL DC](https://github.com/pavithra2200891/Exp-7-Synchornous-counters-/assets/128951583/c12cfb5b-09f0-4466-8626-b26d03910c7a)
 
 
 
@@ -74,15 +108,24 @@ RegisterNumber:
 
 ### TIMING DIGRAMS FOR COUNTER  
 
+UP COUNTER
+![UC TT](https://github.com/pavithra2200891/Exp-7-Synchornous-counters-/assets/128951583/a8eab404-d409-45d4-87ca-87871090a034)
 
+DOWN COUNTER
+![DC TT](https://github.com/pavithra2200891/Exp-7-Synchornous-counters-/assets/128951583/bb7092ab-069d-4a72-91f0-9452681e7853)
 
 
 
 ### TRUTH TABLE 
 
+UP COUNTER
+![UC TRT](https://github.com/pavithra2200891/Exp-7-Synchornous-counters-/assets/128951583/659926ed-8b8c-46a7-8d08-bf65e83a12ea)
 
+DOWN COUNTER
+![DC TRT](https://github.com/pavithra2200891/Exp-7-Synchornous-counters-/assets/128951583/895c3680-0a32-4643-aaa7-cd608ad44d9d)
 
 
 
 
 ### RESULTS 
+Thus synchornous counters up counter and down counter circuit are studied and the truth table for different logic are verified..
